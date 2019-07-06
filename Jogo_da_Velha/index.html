@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Jogo da Velha</title>
+
+		<link rel="stylesheet" type="text/css" a href="css/game.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+
+	<body>
+		<!-- Cabeçalho -->
+		<div class="container">
+			<nav class="navbar navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">
+					<img src="./img/jdv.svg" width="60" height="60" class="d-inline-block align-top float-left mr-2" alt="">
+					<h1>Jogo da Velha</h1>
+				</a>
+			</nav>
+
+			<!-- Menu-->
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="modal" data-target="#modalComoJogar" href="#">Como Jogar</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" data-toggle="modal" data-target="#modalSobre" href="#">Sobre</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			
+			<!-- Modal Como jogar-->
+			<div class="modal fade" id="modalComoJogar" tabindex="-1" role="dialog" aria-labelledby="modalComoJogarTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalComoJogarTitle"><strong>Regras do Jogo da Velha</strong></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<ul class="text-left">
+							<li class="text-justify">O tabuleiro&nbsp; &eacute; uma matriz&nbsp; de tr&ecirc;s linhas por tr&ecirc;s colunas.</li>
+							<li class="text-justify">Dois jogadores escolhem uma marca&ccedil;&atilde;o cada um, geralmente um c&iacute;rculo (O) e um xis (X).</li>
+							<li class="text-justify">Os jogadores jogam alternadamente, uma marca&ccedil;&atilde;o por vez, numa lacuna que esteja vazia.</li>
+							<li class="text-justify">O objectivo &eacute; conseguir tr&ecirc;s c&iacute;rculos ou tr&ecirc;s xis em linha, quer horizontal, vertical ou diagonal , e ao mesmo tempo, quando poss&iacute;vel, impedir o advers&aacute;rio de ganhar na pr&oacute;xima jogada.</li>
+							<li class="text-justify">Quando um jogador conquista o objetivo, costuma-se riscar os tr&ecirc;s s&iacute;mbolos.</li>
+						</ul>
+						<p class="text-left">Se os dois jogadores jogarem sempre da melhor forma, o jogo terminar&aacute; sempre em empate. A l&oacute;gica do jogo &eacute; muito simples, de modo que n&atilde;o &eacute; dif&iacute;cil deduzir ou decorar todas as possibilidades para efetuar a melhor jogada &ndash; apesar de o n&uacute;mero total de possibilidades ser muito grande, a maioria delas &eacute; sim&eacute;trica, al&eacute;m de que as regras&nbsp; s&atilde;o simples.</p>
+						<p class="text-left"><strong>Por esse motivo, &eacute; muito comum que o jogo empate (ou &ldquo;d&ecirc; velha&rdquo;).</strong></p>
+						<ol><li class="text-left">Ganhar: Se voc&ecirc; tem duas pe&ccedil;as numa linha, ponha a terceira.</li>
+							<li class="text-left">Bloquear: Se o oponente tiver duas pe&ccedil;as em linha, ponha a terceira para bloque&aacute;-lo.</li>
+							<li class="text-left">Tri&acirc;ngulo: Crie uma oportunidade em que voc&ecirc; poder&aacute; ganhar de duas maneiras.</li>
+							<li class="text-left">Bloquear o Tri&acirc;ngulo do oponente</li>
+							<li class="text-left">Centro: Jogue no centro.</li>
+							<li class="text-left">Canto vazio: jogue num canto vazio.</li>
+						</ol>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal Sobre-->
+			<div class="modal fade" id="modalSobre" tabindex="-1" role="dialog" aria-labelledby="modalSobreTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalSobreTitle"><strong>Sobre</strong></h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							
+							<p class="text-center">Desenvolvido por Wallison dos Santos</p>
+	
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- O Jogo -->
+			<div id="jogador">
+				<p style="float: left; margin-right: 10px;">Vez do Jogador:</p>
+				<img src="" height="50">
+			</div>
+
+			<div class="tabuleiro">
+				<div id="a1" class="espaco" jogada=""></div>
+				<div id="a2" class="espaco" jogada=""></div>
+				<div id="a3" class="espaco" jogada=""></div>
+
+				<div id="b1" class="espaco" jogada=""></div>
+				<div id="b2" class="espaco" jogada=""></div>
+				<div id="b3" class="espaco" jogada=""></div>
+				
+				<div id="c1" class="espaco" jogada=""></div>
+				<div id="c2" class="espaco" jogada=""></div>
+				<div id="c3" class="espaco" jogada=""></div>
+
+			</div>
+		</div>
+
+		<script type="text/javascript" src="./js/game.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<!--<script src="./jquery-3.3.1.slim.min.js"></script>
+		<script src="./popper.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>-->
+	</body>
+</html>
