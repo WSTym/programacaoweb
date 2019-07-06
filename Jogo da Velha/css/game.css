@@ -1,0 +1,22 @@
+#jogador{
+    margin: auto;
+    margin-top: 40px;
+    width: 300px;
+    height: 80px;
+}
+
+.espaco{
+    width:100px;
+    height: 100px;
+    border:none;
+    float: left;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.tabuleiro{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    background-image: url("../img/tabuleiro.png")
+}
